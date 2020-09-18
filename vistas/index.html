@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>MERCADO LIEBRE</title>
 
 </head>
 
 <body>
 
+<nav class="fondo">
+
     <img src="logo-mercado-liebre.svg"> 
 
     <p>Lugar para poner barra de busqueda</p>
 
-    <p>Comprá en cuotas y sin tarjeta de credito</p>
+    <p><i class="fas fa-hand-holding-usd"></i> Comprá en cuotas y sin tarjeta de credito</p>
 
  
 <nav>    
@@ -37,105 +40,123 @@
     
     <ul>
         <li>
-            <a href="#">Creá tu cuenta</a>
+            <a href="#">Creá tu cuenta <i class="far fa-id-card"></i></a>
         </li>
         <li>
-            <a href="#">Ingresa</a>
+            <a href="#">Ingresa <i class="fas fa-sign-in-alt"></i></a>
         </li>
         <li>
-            <a href="#">Mis compras</a>
+            <a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a>
         </li>
         
     </ul>
 </nav>
 
+</nav> 
+
     <img src="img-home-banner.jpg">
-    
+
+   
 
 <section>    
-        <h2>Basado en tu ultima visita</h2>
+        <h2 id="titulares">Basado en tu ultima visita</h2>
 
             <article>
                     <img src="img-cafetera-moulinex.jpg"></br>
-                    <p>$6770</p>
-                    <p>40%OFF</p>
-                    <p>Cafetera Moulinex Dolce Gusto Lorem ipsum, dolor sit amet.</p>
+                    <i class="fas fa-truck" style="color:green;"></i>
+                    <p class="precios">$6770</p>
+                    <p class="descuentos">40%OFF</p>
+                    <p class="descripciones">Cafetera Moulinex Dolce Gusto Lorem ipsum, dolor sit amet.</p>
+                    
             </article>
+                        <hr>
             
             <article>
                 <img src="img-macbook-pro-2019.jpg"></br>
-                <p>$230000</p>
-                <p>20%OFF</p>
-                <p>Macbook Pro 2019 Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$230000</p>
+                <p class="descuentos">20%OFF</p>
+                <p class="descripciones">Macbook Pro 2019 Lorem ipsum, dolor sit amet.</p>
             </article>
-            
+                        <hr>
             <article>
                 <img src="img-samsung-galaxy-s10.jpg"></br>
-                <p>$70500</p>
-                <p>15%OFF</p>
-                <p>Teléfono móvil Samsung Galaxy S10 Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$70500</p>
+                <p class="descuentos">15%OFF</p>
+                <p class="descripciones">Teléfono móvil Samsung Galaxy S10 Lorem ipsum, dolor sit amet.</p>
             </article>
-
+                        <hr>
             <article>
                 <img src="img-tv-samsung-smart.jpg"></br>
-                <p>$34000</p>
-                <p>5%OFF</p>
-                <p>SmartTv Samsung 43" Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$34000</p>
+                <p class="descuentos">5%OFF</p>
+                <p class="descripciones">SmartTv Samsung 43" Lorem ipsum, dolor sit amet.</p>
             </article>
-
+                    
 </section>
 
 <section>
-        <h2>Ofertas</h2>
+        <h2 id="titulares">Ofertas</h2>
 
             <article>
                 <img src="img-cafetera-moulinex.jpg"></br>
-                <p>$6770</p>
-                <p>40%OFF</p>
-                <p>Cafetera Moulinex Dolce Gusto Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$6770</p>
+                <p class="descuentos">40%OFF</p>
+                <p class="descripciones">Cafetera Moulinex Dolce Gusto Lorem ipsum, dolor sit amet.</p>
             </article>
-        
+                        <hr>
             <article>
                 <img src="img-macbook-pro-2019.jpg"></br>
-                <p>$230000</p>
-                <p>20%OFF</p>
-                <p>Macbook Pro 2019 Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$230000</p>
+                <p class="descuentos">20%OFF</p>
+                <p class="descripciones">Macbook Pro 2019 Lorem ipsum, dolor sit amet.</p>
             </article>
-        
+                        <hr>
             <article>
                 <img src="img-samsung-galaxy-s10.jpg"></br>
-                <p>$70500</p>
-                <p>15%OFF</p>
-                <p>Teléfono móvil Samsung Galaxy S10 Lorem ipsum, dolor sit amet.</p>
-                </article>
-
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$70500</p>
+                <p class="descuentos">15%OFF</p>
+                <p class="descripciones">Teléfono móvil Samsung Galaxy S10 Lorem ipsum, dolor sit amet.</p>
+            </article>
+                        <hr>
             <article>
                 <img src="img-tv-samsung-smart.jpg"></br>
-                <p>$34000</p>
-                <p>5%OFF</p>
-                <p>SmartTv Samsung 43" Lorem ipsum, dolor sit amet.</p>
+                <i class="fas fa-truck" style="color:green;"></i>
+                <p class="precios">$34000</p>
+                <p class="descuentos">5%OFF</p>
+                <p class="descripciones">SmartTv Samsung 43" Lorem ipsum, dolor sit amet.</p>
             </article>    
 
 </section>
 
-<p>Pagá con tarjeta o en efectivo</p>
+        <i class="fas fa-credit-card" style="color: blue;"></i>
+
+<p class="otro-titulo">Pagá con tarjeta o en efectivo</p>
      
 <p>Con MercadoLiebreCash tenés cuotas sin interés con tarjeta o efectivoen puntos de
-    pago. ¡Y siempre es seguro!</p>    
+    pago. ¡Y siempre es seguro!</p>  
+    
+        <i class="fas fa-gift" style="color: blue;"></i>
        
-<p>Envío gratis desde los $ 2.500</p>  
+<p class="otro-titulo">Envío gratis desde los $ 2.500</p>  
     
 <p>Solo por estar registrad@ en MercadoLiebre tenés envíos gratis en miles de
     productos. Es un beneficio de MercadoPuntos.</p>
     
-    
-<p>Seguridad, de principio a fin</p>
-      
+        <i class="fas fa-user-shield" style="color: blue;"></i>
+
+<p class="otro-titulo">Seguridad, de principio a fin</p>
+              
 <p>¿No te gusta? ¡Devolvelo! En MercadoLiebre no hay nada que no puedas hacer
     porque estás siempre prtegid@.</p>  
     
     
-<p>Copyright © 1999-2019 MercadoLiebre S.R.L.</p>  
+<p id="negrita">Copyright © 1999-2019 MercadoLiebre S.R.L.</p>  
 
 
 </body>
