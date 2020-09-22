@@ -13,6 +13,11 @@ img {
     width:100%;
 }
 
+#limpio {
+        text-decoration: none;
+        list-style: none;
+}
+
 #titulares {
             font-size: 24px;
             color: #666;
@@ -46,6 +51,12 @@ hr {
 
 #negrita {
             font-weight: bold;
+}
+
+#titulo-formulario {
+
+                font-size: 20px;
+                font-weight: bold;
 }
 
      
