@@ -1,4 +1,5 @@
 body { font-family: 'Roboto', sans-serif; 
+    background-color: #ebebeb;
      }
 
 p {
@@ -13,7 +14,7 @@ img {
     width:100%;
 }
 
-#limpio {
+.limpio {
         text-decoration: none;
         list-style: none;
 }
@@ -22,6 +23,11 @@ img {
             font-size: 24px;
             color: #666;
             background-color: #ebebeb;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
 }    
 
 .precios {
@@ -59,4 +65,45 @@ hr {
                 font-weight: bold;
 }
 
-     
+.half {
+    width: 50%;
+}
+
+.oculta {
+    display: none;
+}
+
+.texto {
+    text-align: center;
+}
+
+
+
+.boton-azul {    
+    width: 40px;
+    height: 40px;
+    background-color: #0044AA;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    
+}
+
+.boton-azul :hover {
+    color: #0022AA;
+    cursor: pointer;
+}
+
+.pie {
+    padding: 20% 5%;
+}     
+
+.art-pie {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ 
