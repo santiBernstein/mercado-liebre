@@ -1,6 +1,17 @@
+@media (max-device-width: 425px){ 
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body { font-family: 'Roboto', sans-serif; 
     background-color: #ebebeb;
-     }
+   box-sizing: border-box;
+}
+
+.d-flex{display: flex;}
 
 p {
     font-size: 12px;
@@ -8,75 +19,45 @@ p {
 
 .fondo {
         background-color: #EAC926;
-}
-
-img {
-    width:100%;
-}
-
-.limpio {
-        text-decoration: none;
-        list-style: none;
-}
-
-#titulares {
-            font-size: 24px;
-            color: #666;
-            background-color: #ebebeb;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 90%;
-            margin-right: auto;
-            margin-left: auto;
-}    
-
-.precios {
-            font-size: 18px;
-            font-weight: bold;
-            }
-
-.descuentos {
-            font-size: 16px;
-            color: #39b54a;
-}
-
-.descripciones {
-            font-size: 16px;
-}
-
-hr {
-    height: 20px;
-    background-color: #ebebeb;
-  }
-
-
-.otro-titulo {
-            font-size: 18px;
-            font-weight: bold;
-}
-
-#negrita {
-            font-weight: bold;
-}
-
-#titulo-formulario {
-
-                font-size: 20px;
-                font-weight: bold;
+        
 }
 
 .half {
     width: 50%;
 }
+.heigth {height: 20px;}
 
-.oculta {
+.search {width: 100%; height: 20px;}
+
+
+img {
+    width:100%;
+}
+
+ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+a {
+    text-decoration: none;
+       
+}
+
+.hamburguer-container {
+    text-align: center;
+    display: block;
+}
+
+.hamburguer-container:hover .links {
+            display: block;
+           
+}
+
+.links {
     display: none;
 }
-
-.texto {
-    text-align: center;
-}
-
 
 
 .boton-azul {    
@@ -85,20 +66,77 @@ hr {
     background-color: #0044AA;
     color: white;
     font-size: 20px;
-    padding: 10px;
+    padding: 10px 5px 0px 5px;
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px; 
     
 }
 
-.boton-azul :hover {
+.boton-azul:hover {
     color: #0022AA;
     cursor: pointer;
 }
 
+
+
+#titulares {
+            font-size: 24px;
+            color: #666;
+            background-color: #ebebeb;
+            margin: 20px auto;
+            text-align: center;
+            width: 90%;
+            
+}
+
+.articulos {
+    margin: 20px;
+    padding: 15px 15px;
+    background-color: white;
+}
+
+.product-info {
+            border-top: 1px solid #ebebeb;
+}
+
+.precios {
+            font-size: 18px;
+            font-weight: bold;
+            width: 30%;
+            }
+
+.descuentos {
+            font-size: 16px;
+            color: #39b54a;
+            width: 70%;
+}
+
+.descripciones {
+            font-size: 16px;
+            margin-top: 15px;
+}
+
+.otro-titulo {
+            font-size: 18px;
+            font-weight: bold;
+}
+
+
+
+#titulo-formulario {
+
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                
+}
+
+
 .pie {
-    padding: 20% 5%;
+    padding: 20px 5%;
+    background-color: white;
+    width: 100%;
 }     
 
 .art-pie {
@@ -106,4 +144,286 @@ hr {
     margin-bottom: 20px;
 }
 
+#negrita {
+    font-weight: bold;
+}
+
+.fec-nac {
+    font-size: 16px;
+}
+
+form input {
+     width: 100%;
+     margin: 10px auto;
+     border-radius: 5px;
+     border: 0px;
+     padding: 10px;
+     
+}
+
+button {
+    width: 100%;
+    margin: 10px auto;
+     border-radius: 5px;
+     border: 0px;
+     padding: 10px;
+}
+
+.boton-envio {
+        color: white;
+        background-color: #0044AA;
+}
+.boton-envio:hover {
+    color: #0022AA;
+}
+
+.boton-reset {
+    color: white;
+    background-color: #AA0044;
+    }
+
+.boton-reset:hover {
+    color: #CC1155;
+} 
+
+form {
+    margin: 10px;
+}
+
+section article i {
+            color: green;
+            border: 1px solid green;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.foto-usuario {margin-top: 30px;}
+
+.comprador{width: 50%;}
+.comprador-1{width: 50%;}
+
+.vendedor{width: 50%;}
+.vendedor-1{width: 50%;}
+
+.generos{width: 10%; margin: 20px;}
+.generos-1{width: 90%; margin-top: 17px;}
+
+
  
+}
+
+@media screen and (min-device-width: 426px) and (max-device-width: 1024px){
+
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body { font-family: 'Roboto', sans-serif; 
+        background-color: #ebebeb;
+       box-sizing: border-box;
+    }
+    
+    .d-flex{display: flex;}
+    
+    p {
+        font-size: 12px;
+    }
+    
+    .fondo {
+            background-color: #EAC926;
+            
+    }
+    
+    .half {
+        width: 50%;
+    }
+    .heigth {height: 20px;}
+    
+    .search {width: 100%; height: 20px;}
+    
+    
+    img {
+        width:100%;
+    }
+    
+    ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+           
+    }
+    
+    .hamburguer-container {
+        text-align: center;
+        display: block;
+    }
+    
+    .hamburguer-container:hover .links {
+                display: block;
+               
+    }
+    
+    .links {
+        display: none;
+    }
+    
+    
+    .boton-azul {    
+        width: 40px;
+        height: 40px;
+        background-color: #0044AA;
+        color: white;
+        font-size: 20px;
+        padding: 10px 5px 0px 5px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px; 
+        
+    }
+    
+    .boton-azul:hover {
+        color: #0022AA;
+        cursor: pointer;
+    }
+    
+    
+    
+    #titulares {
+                font-size: 24px;
+                color: #666;
+                background-color: #ebebeb;
+                margin: 20px auto;
+                text-align: center;
+                width: 90%;
+                
+    }
+    
+    .articulos {
+        margin: 20px;
+        padding: 15px 15px;
+        background-color: white;
+    }
+    
+    .product-info {
+                border-top: 1px solid #ebebeb;
+    }
+    
+    .precios {
+                font-size: 18px;
+                font-weight: bold;
+                width: 30%;
+                }
+    
+    .descuentos {
+                font-size: 16px;
+                color: #39b54a;
+                width: 70%;
+    }
+    
+    .descripciones {
+                font-size: 16px;
+                margin-top: 15px;
+    }
+    
+    .otro-titulo {
+                font-size: 18px;
+                font-weight: bold;
+    }
+    
+    
+    
+    #titulo-formulario {
+    
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    
+    }
+    
+    
+    .pie {
+        padding: 20px 5%;
+        background-color: white;
+        width: 100%;
+    }     
+    
+    .art-pie {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    #negrita {
+        font-weight: bold;
+    }
+    
+    .fec-nac {
+        font-size: 16px;
+    }
+    
+    form input {
+         width: 100%;
+         margin: 10px auto;
+         border-radius: 5px;
+         border: 0px;
+         padding: 10px;
+         
+    }
+    
+    button {
+        width: 100%;
+        margin: 10px auto;
+         border-radius: 5px;
+         border: 0px;
+         padding: 10px;
+    }
+    
+    .boton-envio {
+            color: white;
+            background-color: #0044AA;
+    }
+    .boton-envio:hover {
+        color: #0022AA;
+    }
+    
+    .boton-reset {
+        color: white;
+        background-color: #AA0044;
+        }
+    
+    .boton-reset:hover {
+        color: #CC1155;
+    } 
+    
+    form {
+        margin: 10px;
+    }
+    
+    section article i {
+                color: green;
+                border: 1px solid green;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    
+    .foto-usuario {margin-top: 30px;}
+    
+    .comprador{width: 50%;}
+    .comprador-1{width: 50%;}
+    
+    .vendedor{width: 50%;}
+    .vendedor-1{width: 50%;}
+    
+    .generos{width: 10%; margin: 20px;}
+    .generos-1{width: 90%; margin-top: 17px;}    
+
+
+
+
+}
