@@ -1,4 +1,4 @@
-@media (max-device-width: 425px){ 
+@media (max-device-width: 360px){ 
 
 * {
     padding: 0;
@@ -12,6 +12,7 @@ body { font-family: 'Roboto', sans-serif;
 }
 
 .d-flex{display: flex;}
+.margin{padding: 10%;}
 
 p {
     font-size: 12px;
@@ -25,10 +26,20 @@ p {
 .half {
     width: 50%;
 }
-.heigth {height: 20px;}
+.heigth {margin: auto; position: relative;}
 
-.search {width: 100%; height: 20px;}
+.lupita{position: absolute;
+    right: 29px;
+    top: 50px;
+    }
 
+.search {width: 100%; 
+    border: white;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5%;   
+}
+.center{text-align: center;}
 
 img {
     width:100%;
@@ -98,7 +109,14 @@ a {
 
 .product-info {
             border-top: 1px solid #ebebeb;
+            position: relative;
 }
+.camion{bottom: 25px;
+    position: absolute;
+    right: 10px;
+    background-color: white;}
+
+.margin-top{margin-top: 15px;}    
 
 .precios {
             font-size: 18px;
@@ -115,6 +133,7 @@ a {
 .descripciones {
             font-size: 16px;
             margin-top: 15px;
+            display: none;
 }
 
 .otro-titulo {
@@ -137,11 +156,15 @@ a {
     padding: 20px 5%;
     background-color: white;
     width: 100%;
-}     
+    text-align: center;
+}
+
+footer article i {color: blue;
+                    font-size: 2em;
+}
 
 .art-pie {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin: 10%;
 }
 
 #negrita {
@@ -212,8 +235,7 @@ section article i {
  
 }
 
-@media screen and (min-device-width: 426px) and (max-device-width: 1024px){
-
+@media screen and (min-device-width: 361px) and (max-device-width: 768px){
 
     * {
         padding: 0;
@@ -227,6 +249,7 @@ section article i {
     }
     
     .d-flex{display: flex;}
+    .margin{padding: 5%;}
     
     p {
         font-size: 12px;
@@ -238,12 +261,25 @@ section article i {
     }
     
     .half {
-        width: 50%;
+        width: 25%;
     }
-    .heigth {height: 20px;}
+    .heigth {margin: auto; position: relative;}
     
-    .search {width: 100%; height: 20px;}
+    .lupita{position: absolute;
+        top: 9%;
+    left: 63%;
+        }
     
+    .search {width: 157%;
+        border: white;
+        height: 30px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+    .center{text-align: right;
+        position: relative;
+        bottom: 80px;
+        margin-right: 3%;}
     
     img {
         width:100%;
@@ -260,40 +296,11 @@ section article i {
            
     }
     
-    .hamburguer-container {
-        text-align: center;
-        display: block;
-    }
-    
-    .hamburguer-container:hover .links {
-                display: block;
-               
-    }
-    
-    .links {
-        display: none;
-    }
+    .hamburguer-container i{display: none;   }
+      
     
     
-    .boton-azul {    
-        width: 40px;
-        height: 40px;
-        background-color: #0044AA;
-        color: white;
-        font-size: 20px;
-        padding: 10px 5px 0px 5px;
-        border-radius: 5px;
-        margin-top: 20px;
-        margin-bottom: 20px; 
-        
-    }
-    
-    .boton-azul:hover {
-        color: #0022AA;
-        cursor: pointer;
-    }
-    
-    
+      
     
     #titulares {
                 font-size: 24px;
@@ -313,7 +320,14 @@ section article i {
     
     .product-info {
                 border-top: 1px solid #ebebeb;
+                position: relative;
     }
+    .camion{bottom: 25px;
+        position: absolute;
+        right: 10px;
+        background-color: white;}
+    
+    .margin-top{margin-top: 15px;}    
     
     .precios {
                 font-size: 18px;
@@ -330,6 +344,7 @@ section article i {
     .descripciones {
                 font-size: 16px;
                 margin-top: 15px;
+                display: none;
     }
     
     .otro-titulo {
@@ -352,11 +367,15 @@ section article i {
         padding: 20px 5%;
         background-color: white;
         width: 100%;
-    }     
+        text-align: center;
+    }
+    
+    footer article i {color: blue;
+                        font-size: 2em;
+    }
     
     .art-pie {
-        margin-top: 20px;
-        margin-bottom: 20px;
+      margin: 10%;
     }
     
     #negrita {
@@ -421,7 +440,9 @@ section article i {
     .vendedor-1{width: 50%;}
     
     .generos{width: 10%; margin: 20px;}
-    .generos-1{width: 90%; margin-top: 17px;}    
+    .generos-1{width: 90%; margin-top: 17px;}
+    
+   
 
 
 
