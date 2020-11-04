@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Inicio'}) %>
+<body>
+
+  <!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+
+    <main>
+
+       <form action="/register" method="post" enctype="multipart/form-data">
+
+                      <!registro>
+                
+                <p><input type="text" id="nombreyapellido" name="nombreyapellido" placeholder="Nombre y Apellido"></p>
+
+                <p><input type="text" id="nombredeusuario" name="nombredeusuario" placeholder="Nombre de Usuario"></p>
+
+                <p><input type="email" id="email" name="email" placeholder="Email"></p>
+
+                <p><label class="fec-nac" for="fechadenacimiento">Fecha de Nacimiento</label></p>
+                <p><input type="date" id="fechadenacimiento" name="fechadenacimiento"></p>
+
+                <p><input type="text" id="domicilio" name="domicilio" placeholder="Domicilio"></p>
+
+                
+                <!perfil>
+             <div class="foto-usuario">
+                <p id="titulo-formulario"><label for="">Perfil del Usuario</label></p>
+                <div class="d-flex">
+
+                    <div class="half">
+                <input class="comprador" type="radio" name="unosolo" value="s">
+                <label class="comprador-1">Comprador</label>
+                </div>
+
+                <div class="half">
+                <input class="vendedor" type="radio" name="unosolo" value="s">
+                <label class="vendedor-1">Vendedor</label>
+                </div>
+
+                </div>
+                
+             </div>
+
+                
+                <!intereses>
+                <div class="foto-usuario">
+                <p><label for="" id="titulo-formulario">Intereses</label></p>
+                <div class="d-flex">
+                <input class="generos" type="checkbox" name="generos" value="Electro">
+                <label class="generos-1">Electro</label>
+                </div>
+                <div class="d-flex">
+                <input class="generos" type="checkbox" name="generos" value="Moda">
+                <label class="generos-1">Moda</label>
+                </div>
+                <div>
+                <input class="generos" type="checkbox" name="generos" value="Hogar">
+                <label class="generos-1">Hogar</label>
+                </div>
+                <div>
+                <input class="generos" type="checkbox" name="generos" value="Jugueteria">
+                <label class="generos-1">Jugueteria</label>
+                </div>
+                <div>
+                <input class="generos" type="checkbox" name="generos" value="Vida Sana">
+                <label class="generos-1">Vida Sana</label>
+                </div>
+            </div>
+
+                
+                <!Usuario>
+                <div class="foto-usuario">
+                <p><label for="" id="titulo-formulario">Seleccione foto de Usuario</label></p>
+                <p><input type="file" name="avatar"></p>
+                 
+
+                <p><input type="password" name="password" id="password" placeholder="Contraseña"></p>
+
+                <p><input type="password" name="password" id="password" placeholder="Confirmar Contraseña"></p>
+                </div>
+
+                
+                <!boton enviar>
+                <p><button class="boton-envio" type="submit">Enviar</button></p>
+                <p><button class="boton-reset" type="reset">Borrar Campos</button></p>
+
+            </form>
+
+</main>
+
+<!-- footer -->
+<%- include('partials/footer') %>
+<!-- /footer -->
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Inicio'}) %>
+
+<body>
+
+    <!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+                    
+            
+<main>
+
+             <form action="/" method="GET">                   
+
+                       
+                        <p><input type="text" id="nombredeusuario" name="nombredeusuario" placeholder="Nombre de Usuario"></p>
+
+                        
+                        <p><input type="password" name="password" id="password" placeholder="Contraseña"></p>
+
+                        <p><button class="boton-envio input" type="submit">Enviar</button></p>
+
+                   
+                    </form>
+</main>
+
+
+<!-- footer -->
+<%- include('partials/footer') %>
+<!-- /footer -->
+
+</body>
+</html>

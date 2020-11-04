@@ -18,11 +18,11 @@ router.get('/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/:id/edit', productsController.edit); 
-router.post('/:id', productsController.update); 
+router.put('/:id', productsController.update); 
 
 
 /*** DELETE ONE PRODUCT***/ 
-router.post('/:id', productsController.destroy); 
+router.delete('/:id', productsController.destroy); 
 
 
 module.exports = router;

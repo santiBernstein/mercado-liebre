@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 let productsData = require('../data/productsDataBase.json');
+let repository = require('../repositories/productsRepository.js')
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -10,6 +11,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
+
+		//data = repository.search(req)
+
 		res.render('products', {productsData})
 	},
 
@@ -31,7 +35,7 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		let content = fs.readFileSync('./data/products.json', {encoding: 'utf-8'})
+		let content = fs.readFileSync('./data/productsDataBase.json', {encoding: 'utf-8'})
 
         content = JSON.parse(content)
 
@@ -42,7 +46,7 @@ const controller = {
 
         content = JSON.stringify(content)
 
-        fs.writeFileSync('./data/products.json', content)
+        fs.writeFileSync('./data/productsDataBase.json', content)
 
        res.send('bien')
 	},
@@ -65,7 +69,7 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+		res.send('anda')
 	}
 };
 
