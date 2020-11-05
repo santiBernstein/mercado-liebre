@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 let productsData = require('../data/productsDataBase.json');
-let repository = require('../repositories/productsRepository.js')
+const {validationResult} = require('express-validator');
+//let repository = require('../repositories/productsRepository.js')
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -31,13 +32,25 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form')
+		res.render('product-create-form',{
+			data : {}
+		})
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
 		
-		//let productsfilePath = './data/productsDataBase.json'
+		let errors = validationResult(req)
+
+		if(!errors.isEmpty()){
+
+			return res.render('product-create-form', { 
+				
+				errors : errors.mapped(),
+				data : req.body
+				
+				})
+		}
 
 		let content = fs.readFileSync(productsFilePath, {encoding: 'utf-8'})
 

@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 var checkIp = require('../middlewares/checkIp');
+var validation = require('../middlewares/products-validator');
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -11,7 +12,8 @@ router.get('/', productsController.index);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', checkIp, productsController.create); 
-router.post('/', productsController.store); 
+router.post('/', validation, productsController.store); 
+
 
 
 /*** GET ONE PRODUCT ***/ 
