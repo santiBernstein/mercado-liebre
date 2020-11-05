@@ -1,6 +1,7 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
+var checkIp = require('../middlewares/checkIp');
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -9,7 +10,7 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
+router.get('/create', checkIp, productsController.create); 
 router.post('/', productsController.store); 
 
 

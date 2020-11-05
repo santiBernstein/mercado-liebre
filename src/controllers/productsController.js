@@ -3,6 +3,7 @@ const path = require('path');
 let productsData = require('../data/productsDataBase.json');
 let repository = require('../repositories/productsRepository.js')
 
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -35,7 +36,10 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		let content = fs.readFileSync('./data/productsDataBase.json', {encoding: 'utf-8'})
+		
+		//let productsfilePath = './data/productsDataBase.json'
+
+		let content = fs.readFileSync(productsFilePath, {encoding: 'utf-8'})
 
         content = JSON.parse(content)
 
@@ -46,9 +50,9 @@ const controller = {
 
         content = JSON.stringify(content)
 
-        fs.writeFileSync('./data/productsDataBase.json', content)
+        fs.writeFileSync(productsFilePath, content)
 
-       res.send('bien')
+       res.redirect('/products')
 	},
 
 	// Update - Form to edit
