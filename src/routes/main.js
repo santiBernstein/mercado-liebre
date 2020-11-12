@@ -1,7 +1,7 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-
+var userValidator = require('../middlewares/user-validator');
 
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
@@ -28,6 +28,6 @@ router.get('/search', mainController.search);
 router.get('/login', mainController.login);
 
 router.get('/register', mainController.register);
-router.post('/register', upload.any(), mainController.store);
+router.post('/register', upload.any(), userValidator, mainController.store);
 
 module.exports = router;

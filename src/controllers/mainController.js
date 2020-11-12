@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+
 let productsData = require('../data/productsDataBase.json');
+const usersFilePath = path.join(__dirname, '../data/users.json');
+
 let bcryptjs = require('bcryptjs');
+var userData = require('../data/user');
+var {validationResult} = require('express-validator');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -20,25 +25,43 @@ const controller = {
 		res.render('login')
 	},
 	register: (req, res) => {
-		res.render('register')
+		res.render('register', { linkToLogin: false})
 	},
 	store: (req, res) => {
-		let content = fs.readFileSync('../data/users.json', {encoding: 'utf-8'})
+		// let content = fs.readFileSync(usersFilePath, {encoding: 'utf-8'})
 
-        content = JSON.parse(content)
+        // content = JSON.parse(content)
 
-        content.push ({
+        // content.push ({
 
-				id: content.length,
+		// 		id: content.length,
+		// 		name: req.body.name,
+		// 		email : req.body.email,
+		// 		password : bcryptjs.hashSync(req.body.password)
+        // })
+
+        // content = JSON.stringify(content)
+
+		// fs.writeFileSync(usersFilePath, content)
+		let errors = validationResult(req)
+
+		if (errors.isEmpty()){
+
+			userData.create({ 
+
 				email : req.body.email,
-				password : bcryptjs.hashSync(req.body.password)
-        })
+				//password : bcryptjs.hashSync(req.body.password)
+			})
+		
+			return res.send('te registraste')
 
-        content = JSON.stringify(content)
+			 }
+			
+		return res.render('/register', {
 
-        fs.writeFileSync('../data/users.json', content)
-
-       res.send('bien')
+			errors : errors.mapped(),
+			linkToLogin : true
+		})         
 		
 	},
 };
