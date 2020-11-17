@@ -26,7 +26,8 @@
 			<i class="fas fa-bars"></i>
 		</button>
 
-		<nav class="main-navbar">
+		<nav class="main-navbar">				
+				
 			<ul class="left-navbar">
 				<li><a href="/products">Todos los productos</a></li>
 				<li><a href="#">Ofertas</a></li>
@@ -36,9 +37,16 @@
 			</ul>
 
 			<ul class="right-navbar">
+				<% if(locals.user){  %>
+					<p>Bienvenido <%= locals.user %> </p>
+					<form action="/logout" method="POST">
+					<button>Logout</button>	
+					</form>						
+					<% } else { %>
 				<li><a href="#">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
 				<li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
 				<li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+				<% } %>  
 			</ul>
 		</nav>
 	</div>
