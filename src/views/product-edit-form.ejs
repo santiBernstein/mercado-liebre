@@ -14,19 +14,19 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<form action="/products/<%= resultado.id %>?_method=PUT" method="POST">
+			<form action="/products/<%= resultado.id %>?_method=PUT" method="PUT">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+						<input type="text" id="name" name="name" placeholder="<%= resultado.name %>" class="form-input">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio del producto:</label>
-						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+						<input type="text" id="price" name="price" placeholder="<%= resultado.price %>" class="form-input">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="discount" class="form-label">Descuento:</label>
-						<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+						<input type="text" id="discount" name="discount" placeholder="<%= resultado.discount %>" class="form-input">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>

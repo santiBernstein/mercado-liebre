@@ -33,7 +33,7 @@ const controller = {
 	// Create - Form to create
 	create: (req, res) => {
 		res.render('product-create-form',{
-			data : {}
+			data : {}, errors: {}
 		})
 	},
 	
@@ -81,12 +81,33 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+		let content = JSON.parse(fs.readFileSync(productFilePath, {encoding: 'utf-8'}));
+		let ids = Number(req.params.id) - 1;
+		content[ids].name = req.body.name;
+		content[ids].category = req.body.category;
+		content[ids].price = req.body.price;
+		content[ids].discount = req.body.discount; 
+        content[ids].description = req.body.desciption;
+        content[ids].image = req.files[0].filename;
+		fs.writeFileSync(productFilePath, JSON.stringify(content))
+		res.redirect('/')
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		res.send('anda')
+		const content = JSON.parse(fs.readFileSync(productJsonFilePath, 'utf-8'));
+		const imagePath = path.join(__dirname,"../public/images",content[(Number(req.params.id)-1)].image);
+        
+        fs.unlink(imagePath, function (err) {
+			if (err) throw err;
+			
+		})
+		content.splice((Number(req.params.id)-1),1)
+		let i=1;
+		content.forEach(product=>product.id = i++)
+		fs.writeFileSync(productJsonFilePath,JSON.stringify(content))
+		res.redirect('/')
+		
 	}
 };
 
