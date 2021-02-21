@@ -32,19 +32,7 @@ module.exports = {
   create(req, res) {
     return res.render("users/user-register-form");
   },
-  sales(req, res) {
-    Item.findAll({
-      where: {
-        sellerId: req.session.user.id,
-      },
-      include: {
-        all: true,
-        nested: true,
-      },
-    }).then((items) => res.render("users/sales", { items }));
-  },
-
-  
+    
   store(req, res) {
     const errors = validationResult(req);
    
@@ -66,7 +54,6 @@ module.exports = {
       });
     }
   },
-
   
   showLogin(req, res) {
     return res.render("users/user-login-form");
@@ -180,136 +167,7 @@ module.exports = {
     })
       .then((user) => res.redirect("/"))
       .catch((e) => console.log(e));
-  },
+  } 
 
-  cart(req, res) {
-    Item.findAll({
-      where: {
-        userId: req.session.user.id,
-        state: 1,
-      },
-      include: ['product'],
-    }).then((items) => {
-      return res.render("users/cart", { items })
-    });
-  },
-
-  addToCart(req, res) {
-    const errors = validationResult(req);
-
-    if (errors.isEmpty()) {
-      
-      Product.findByPk(req.body.productId, {
-        include: ["user"],
-      })
-        .then((product) => {
-          
-
-          let price =
-            Number(product.discount) > 0
-              ? product.price - (product.price * product.discount) / 100
-              : product.price;
-
-          
-          return Item.create({
-            salePrice: price,
-            quantity: req.body.quantity,
-            subTotal: price * req.body.quantity,
-            state: 1,
-            userId: req.session.user.id,
-            sellerId: product.user.id,
-            productId: product.id,
-          });
-        })
-        .then((item) => res.redirect("/users/cart"))
-        .catch((e) => console.log(e));
-    } else {
-       Product.findByPk(req.body.productId, {
-         include: ["user"],
-       })
-         .then(product => {
-            return res.render('products/detail', {product, errors: errors.mapped()})
-         })
-    }
-  },
-
-  deleteFromCart(req, res) {
-    Item.destroy({
-      where: {
-        id: req.body.itemId,
-      },
-      force: true,
-    })
-      .then((response) => res.redirect("/users/cart"))
-      .catch((e) => console.log(e));
-  },
-
-  shop(req, res) {
-    let items;
-
-    
-    Item.findAll({
-      where: {
-        userId: req.session.user.id,
-        state: 1,
-      },
-    })
-      
-      .then((itemsSearched) => {
-        items = itemsSearched;
-        return Item.closeItems(req.session.user.id);
-      })
-     
-      .then(() => {
-        return Cart.findOne({
-          order: [["createdAt", "DESC"]],
-        });
-      })
-      
-      .then((cart) => {
-        return Cart.create({
-          orderNumber: cart ? ++cart.orderNumber : 1000,
-          total: items.reduce(
-            (total, item) => (total = total + item.subTotal),
-            0
-          ),
-          userId: req.session.user.id,
-        });
-      })
-      
-      .then((cart) => {
-        return Item.assignItems(req.session.user.id, cart.id);
-      })
-     
-      .then(() => res.redirect("/users/history"))
-      .catch((e) => console.log(e));
-  },
-
-  history(req, res) {
-    Cart.findAll({
-      where: {
-        userId: req.session.user.id,
-      },
-      include: {
-        all: true,
-        nested: true,
-        paranoid: false,
-      },
-      order: [["createdAt", "DESC"]],
-    })
-      .then((carts) => {
-        res.render("users/history", { carts });
-      })
-      .catch((e) => console.log(e));
-  },
-
-  showBuyDetail(req, res) {
-    Cart.findByPk(req.params.id, {
-      include: {
-        all: true,
-        nested: true,
-        paranoid: false,
-      },
-    }).then((cart) => res.render("users/buyDetail", { cart }));
-  },
+  
 };

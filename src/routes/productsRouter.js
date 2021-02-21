@@ -45,20 +45,19 @@ var upload = multer({
 
 
 
-router.get('/page/:page', productsController.index); /* GET - All products - index */
-router.get('/detail/:id', productsController.detail); /* GET - Product detail - show*/
+router.get('/page/:page', productsController.index);
+router.get('/detail/:id', productsController.detail); 
 
 
-router.get('/create', authMiddleware, productsController.create); /* GET - Form to create - create */
-router.post('/', authMiddleware, upload.single('image'), validator.createProduct, productsController.store); /* POST - Store in DB - store*/
+router.get('/create', authMiddleware, productsController.create); 
+router.post('/', authMiddleware, upload.single('image'), validator.createProduct, productsController.store); 
 
  
-router.get('/:id/edit', sellerMiddleware, productsController.edit); /* GET - Form to create - edit */
-router.patch('/:id', sellerMiddleware, upload.single('image'), validator.editProduct, productsController.update); /* PATCH - Update in DB - update*/
+router.get('/:id/edit', sellerMiddleware, productsController.edit); 
+router.patch('/:id', sellerMiddleware, upload.single('image'), validator.editProduct, productsController.update); 
+
+router.delete('/:id', sellerMiddleware, productsController.destroy); 
 
 
-router.delete('/:id', sellerMiddleware, productsController.destroy); /* DELETE - Delete from DB - destroy */
-
-router.get('/categories/:category?', productsController.categories);
 
 module.exports = router;

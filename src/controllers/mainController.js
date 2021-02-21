@@ -24,20 +24,8 @@ module.exports = {
 			.then(([ultimos, inSale]) => res.render('index', { ultimos, inSale: inSale.sort(() => Math.random() - 0.5) }))
 			.catch(e => console.log(e));
 
-	},
+	}
 
 	
-	async search (req, res) {
-
-		let products = await Product.findAll({
-			where: {
-				name: {
-					[Op.substring]: req.query.search
-				}
-			},
-			limit: 12
-		});
-
-		return res.render('results', { products: products.sort(() => Math.random() - 0.5), search: req.query.search })
-	}
+	
 };

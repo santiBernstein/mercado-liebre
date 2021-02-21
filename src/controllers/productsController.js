@@ -152,33 +152,6 @@ module.exports = {
 				res.redirect('/')
 			})
 			.catch(e => console.log(e));
-	},
-	async categories (req, res) {
-		let where = {};
-		let products = [];
-		let title = "Todos los productos";
-
-		if (req.params.category) {
-			let category = await Category.findOne({
-				where: {
-				   name: req.params.category
-				},
-				include: ['products']
-			});
-			
-			title = req.params.category;
-			 
-			if (category) {
-				products = category.products
-			};
-		} else {
-			products = await Product.findAll(where);
-		}
-
-		let categories = await Category.findAll({
-			include: ['products']
-		});
-
-		return res.render('products/categories', { products, categories, title })
 	}
+	
 }
